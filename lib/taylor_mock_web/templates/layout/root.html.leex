@@ -8,11 +8,36 @@
     <%= live_title_tag assigns[:page_title] || "TaylorMock", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <header>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="p-6">
       <span>Taylor Mock</span>
     </header>
     <%= @inner_content %>
+    <footer class="p-6 text-center">
+      <a
+        href="https://www.github.com/tmock12"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        <i title="Github @tmock12" class="fab fa-github"></i>
+      </a>
+      <a
+        href="https://www.twitter.com/tmock12"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mx-2"
+        >
+        <i title="Twitter @tmock12" class="fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/taylormock/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        <i title="LinkedIn Taylor Mock" class="fab fa-linkedin"></i>
+      </a>
+    </footer>
   </body>
 </html>

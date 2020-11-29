@@ -1,31 +1,49 @@
-<h1>Hi, I'm Taylor</h1>
-
-<p>
-  I'm a software developer and consultant experienced in building applications
-  for various business domains. Currently writing Elixir and JavaScript at
-  <a href="http://www.heroku.com" target="_blank" rel="noopener noreferrer"
-    >Heroku</a
-  >. Formerly at
-  <a href="http://www.hashrocket.com" target="_blank" rel="noopener noreferrer"
-    >Hashrocket</a
-  >.
-</p>
-<p>
-  In my personal time, you can find me snowboarding, surfing, racing stand up
-  paddleboards or sailing.
-</p>
-
-<section>
-  <h2>Common tech you'll find me using in production:</h2>
-  <ul>
-    <li>Elixir</li>
-    <li>Phoenix</li>
-    <li>Ruby</li>
-    <li>Rails</li>
-    <li>JavaScript</li>
-    <li>React</li>
-    <li>Ember</li>
-    <li>PostgreSQL</li>
-    <li>many others...</li>
-  </ul>
+<section
+  class="bg-gradient-to-r from-gray-800 to-black flex items-center flex-wrap"
+>
+  <div class="w-2/3 p-10 text-gray-300">
+    <h1 class="text-3xl">Hi, I'm Taylor</h1>
+    <p class="pt-2 text-lg">
+      A software developer and consultant experienced in building applications
+      for various business domains. Currently writing Elixir and JavaScript at
+      <a
+        href="http://www.heroku.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-300"
+        >Heroku</a
+      >. Formerly at
+      <a
+        href="http://www.hashrocket.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-300"
+        >Hashrocket</a
+      >.
+    </p>
+    <p class="pt-2 text-lg">
+      When not at a computer, you'll find me snowboarding, surfing, racing stand
+      up paddleboards or sailing.
+    </p>
+  </div>
+  <div class="w-1/3">
+    <%= img_tag(Routes.static_path(@conn, "/images/taylor_bw_sup.jpg"), class: "w-100") %>
+  </div>
 </section>
+
+<div class="flex justify-center">
+  <section class="p-6 text-center md:w-1/2">
+    <h2>Common things you'll find me using in production</h2>
+    <ul class="grid grid-cols-3 gap-2 pt-2 text-center">
+      <li class="bg-gray-300 rounded">Elixir</li>
+      <li class="bg-gray-300 rounded">Phoenix</li>
+      <li class="bg-gray-300 rounded">Ruby</li>
+      <li class="bg-gray-300 rounded">Rails</li>
+      <li class="bg-gray-300 rounded">JavaScript</li>
+      <li class="bg-gray-300 rounded">React</li>
+      <li class="bg-gray-300 rounded">Ember</li>
+      <li class="bg-gray-300 rounded">PostgreSQL</li>
+      <li class="bg-gray-300 rounded">many others...</li>
+    </ul>
+  </section>
+</div>
