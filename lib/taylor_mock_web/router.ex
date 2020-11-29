@@ -17,7 +17,7 @@ defmodule TaylorMockWeb.Router do
   scope "/", TaylorMockWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    get "/", MarketingController, :welcome
   end
 
   # Other scopes may use custom stacks.

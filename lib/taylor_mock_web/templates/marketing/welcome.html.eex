@@ -1,0 +1,31 @@
+<h1>Hi, I'm Taylor</h1>
+
+<p>
+  I'm a software developer and consultant experienced in building applications
+  for various business domains. Currently writing Elixir and JavaScript at
+  <a href="http://www.heroku.com" target="_blank" rel="noopener noreferrer"
+    >Heroku</a
+  >. Formerly at
+  <a href="http://www.hashrocket.com" target="_blank" rel="noopener noreferrer"
+    >Hashrocket</a
+  >.
+</p>
+<p>
+  In my personal time, you can find me snowboarding, surfing, racing stand up
+  paddleboards or sailing.
+</p>
+
+<section>
+  <h2>Common tech you'll find me using in production:</h2>
+  <ul>
+    <li>Elixir</li>
+    <li>Phoenix</li>
+    <li>Ruby</li>
+    <li>Rails</li>
+    <li>JavaScript</li>
+    <li>React</li>
+    <li>Ember</li>
+    <li>PostgreSQL</li>
+    <li>many others...</li>
+  </ul>
+</section>
