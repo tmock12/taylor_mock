@@ -24,7 +24,20 @@ defmodule TaylorMockWeb.Endpoint do
     at: "/",
     from: :taylor_mock,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(
+      css
+      fonts
+      images
+      js
+      robots.txt
+      favicon.ico
+      android-chrome-192x192.png
+      android-chrome-512x512.png
+      apple-touch-icon.png
+      favicon-32x32.png
+      favicon-16x16.png
+      manifest.json
+    )
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
