@@ -15,8 +15,13 @@
     <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous"></script>
   </head>
   <body class="bg-gray-100 flex flex-col min-h-screen">
-    <header class="p-6">
+    <header class="p-6 flex items-center justify-between">
       <span>Taylor Mock</span>
+      <nav role="navigation">
+        <%= if @current_user do %>
+          <%= link "Log out #{@current_user.email}", to: Routes.user_session_path(@conn, :delete), method: :delete %>
+        <% end %>
+      </nav>
     </header>
     <%= @inner_content %>
     <footer class="p-6 text-center">
