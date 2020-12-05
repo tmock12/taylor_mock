@@ -1,0 +1,56 @@
+name: Elixir CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    env:
+      MIX_ENV: "test"
+    services:
+      postgres:
+        image: postgres:11
+        ports: ['5432:5432']
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: taylor_mock_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Elixir
+      uses: actions/setup-elixir@v1
+      with:
+        elixir-version: '1.11.2'
+        otp-version: '23.1.1'
+    - name: Restore dependencies cache
+      uses: actions/cache@v2
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.5.0'
+
+    - run: mix local.rebar --force
+    - run: mix local.hex --force
+    - name: Install dependencies
+      run: mix deps.get
+    - name: NPM Install
+      run: npm install --prefix assets
+    - run: npm run deploy --prefix assets
+    - name: Run tests
+      run: mix test
+    - name: Ensure code formatting
+      run: mix format --check-formatted
