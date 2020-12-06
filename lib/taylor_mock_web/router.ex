@@ -1,6 +1,9 @@
 defmodule TaylorMockWeb.Router do
   use TaylorMockWeb, :router
 
+  import TaylorMockWeb.UserAuth
+  import Phoenix.LiveDashboard.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +11,7 @@ defmodule TaylorMockWeb.Router do
     plug :put_root_layout, {TaylorMockWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_user
   end
 
   pipeline :api do
@@ -17,27 +21,22 @@ defmodule TaylorMockWeb.Router do
   scope "/", TaylorMockWeb do
     pipe_through :browser
 
+    delete "/log_out", UserSessionController, :delete
     get "/", MarketingController, :welcome
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", TaylorMockWeb do
-  #   pipe_through :api
-  # end
+  ## Authentication routes
 
-  # Enables LiveDashboard only for development
-  #
-  # If you want to use the LiveDashboard in production, you should put
-  # it behind authentication and allow only admins to access it.
-  # If your application does not have an admins-only section yet,
-  # you can use Plug.BasicAuth to set up some basic authentication
-  # as long as you are also using SSL (which you should anyway).
-  if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
+  scope "/", TaylorMockWeb do
+    pipe_through [:browser, :redirect_if_user_is_authenticated]
 
-    scope "/" do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: TaylorMockWeb.Telemetry
-    end
+    get "/log_in", UserSessionController, :new
+    post "/log_in", UserSessionController, :create
+  end
+
+  scope "/", TaylorMockWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    live_dashboard "/dashboard", metrics: TaylorMockWeb.Telemetry
   end
 end
