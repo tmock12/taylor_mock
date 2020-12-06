@@ -1,5 +1,5 @@
 <section
-  class="bg-gradient-to-r from-gray-800 to-black flex items-center flex-wrap"
+  class="flex flex-wrap items-center bg-gradient-to-r from-gray-800 to-black"
 >
   <div class="w-2/3 p-10 text-gray-300">
     <h1 class="text-3xl">Hi, I'm Taylor</h1>
@@ -34,7 +34,7 @@
 <div class="flex justify-center">
   <section class="p-6 text-center md:w-1/2">
     <h2>Common things you'll find me using in production</h2>
-    <ul class="grid grid-cols-3 gap-2 pt-2 text-center">
+    <ul class="pt-2 text-center grid grid-cols-3 gap-2">
       <li class="bg-gray-300 rounded">Elixir</li>
       <li class="bg-gray-300 rounded">Phoenix</li>
       <li class="bg-gray-300 rounded">Ruby</li>
