@@ -14,9 +14,11 @@
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous"></script>
   </head>
-  <body class="bg-gray-100 flex flex-col min-h-screen">
-    <header class="p-6 flex items-center justify-between">
-      <span>Taylor Mock</span>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <header class="flex items-center justify-between p-6">
+      <%= link to: Routes.marketing_path(@conn, :welcome) do %>
+        <span class="font-semibold">Taylor Mock</span>
+      <% end %>
       <nav role="navigation">
         <%= if @current_user do %>
           <%= link "Log out #{@current_user.email}", to: Routes.user_session_path(@conn, :delete), method: :delete %>
