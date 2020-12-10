@@ -34,6 +34,7 @@ defmodule TaylorMock.MixProject do
   defp deps do
     [
       {:bcrypt_elixir, "~> 2.0"},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:phoenix, "~> 1.5.7"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},

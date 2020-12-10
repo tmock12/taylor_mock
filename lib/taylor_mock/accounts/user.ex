@@ -1,4 +1,7 @@
 defmodule TaylorMock.Accounts.User do
+  @moduledoc """
+  A user with hashed password
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

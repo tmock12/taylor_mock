@@ -1,4 +1,7 @@
 defmodule TaylorMockWeb.Telemetry do
+  @moduledoc """
+  Telemetry used for live dashboard
+  """
   use Supervisor
   import Telemetry.Metrics
 

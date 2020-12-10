@@ -1,4 +1,5 @@
 defmodule TaylorMockWeb.PageLive do
+  @moduledoc false
   use TaylorMockWeb, :live_view
 
   @impl true
