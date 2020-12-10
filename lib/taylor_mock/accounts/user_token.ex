@@ -1,4 +1,7 @@
 defmodule TaylorMock.Accounts.UserToken do
+  @moduledoc """
+  User session tokens
+  """
   use Ecto.Schema
   import Ecto.Query
 

@@ -1,4 +1,7 @@
 defmodule TaylorMockWeb.UserAuth do
+  @moduledoc """
+  Plugs for user authentication.
+  """
   import Plug.Conn
   import Phoenix.Controller
 
