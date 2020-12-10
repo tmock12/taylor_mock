@@ -67,3 +67,5 @@ jobs:
       run: mix test
     - name: Ensure code formatting
       run: mix format --check-formatted
+    - name: Credo enforced
+      run: mix credo
