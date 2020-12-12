@@ -10,6 +10,17 @@ use Mix.Config
 config :taylor_mock,
   ecto_repos: [TaylorMock.Repo]
 
+config :taylor_mock,
+       TaylorMock.Repo,
+       migration_timestamps: [type: :utc_datetime_usec],
+       migration_primary_key: [
+         name: :id,
+         type: :binary_id,
+         autogenerate: false,
+         read_after_writes: true,
+         default: {:fragment, "uuid_generate_v4()"}
+       ]
+
 # Configures the endpoint
 config :taylor_mock, TaylorMockWeb.Endpoint,
   url: [host: "localhost"],
