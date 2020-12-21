@@ -10,7 +10,7 @@ defmodule TaylorMock.BlogTest do
     @valid_attrs %{body: "some body", title: "some title"}
     @invalid_attrs %{body: nil, title: nil}
 
-    def post_fixture(user, attrs \\ %{}) do
+    def post_fixture(attrs \\ %{}, user \\ user_fixture()) do
       attrs = Enum.into(attrs, @valid_attrs)
 
       {:ok, post} = Blog.create_post(user, attrs)
@@ -39,8 +39,13 @@ defmodule TaylorMock.BlogTest do
     end
 
     test "change_post/1 returns a post changeset" do
-      post = post_fixture(user_fixture())
+      post = post_fixture()
       assert %Ecto.Changeset{} = Blog.change_post(post)
+    end
+
+    test "list_posts/0 returns posts" do
+      post = post_fixture()
+      assert Blog.list_posts() == [post]
     end
   end
 end
