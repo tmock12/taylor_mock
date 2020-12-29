@@ -1,6 +1,7 @@
 defmodule TaylorMock.BlogTest do
   use TaylorMock.DataCase
   import TaylorMock.AccountsFixtures, only: [user_fixture: 0]
+  import TaylorMock.BlogFixtures, only: [post_fixture: 0]
 
   alias TaylorMock.Blog
 
@@ -9,13 +10,6 @@ defmodule TaylorMock.BlogTest do
 
     @valid_attrs %{body: "some body", title: "some title"}
     @invalid_attrs %{body: nil, title: nil}
-
-    def post_fixture(user, attrs \\ %{}) do
-      attrs = Enum.into(attrs, @valid_attrs)
-
-      {:ok, post} = Blog.create_post(user, attrs)
-      post
-    end
 
     test "create_post/2 with valid data creates a post" do
       user = user_fixture()
@@ -39,8 +33,13 @@ defmodule TaylorMock.BlogTest do
     end
 
     test "change_post/1 returns a post changeset" do
-      post = post_fixture(user_fixture())
+      post = post_fixture()
       assert %Ecto.Changeset{} = Blog.change_post(post)
+    end
+
+    test "list_posts/0 returns posts" do
+      post = post_fixture()
+      assert Blog.list_posts() == [post]
     end
   end
 end

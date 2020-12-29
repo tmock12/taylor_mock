@@ -28,6 +28,20 @@ defmodule TaylorMock.Blog do
   end
 
   @doc """
+  Returns a list of posts ordered by inserted at.
+
+  ## Examples
+
+      iex> change_post(post)
+      [%Post{}, ...]
+  """
+  def list_posts() do
+    Post
+    |> order_by(desc: :inserted_at)
+    |> Repo.all()
+  end
+
+  @doc """
   Returns an `%Ecto.Changeset{}` for tracking post changes.
 
   ## Examples

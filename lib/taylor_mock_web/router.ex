@@ -37,6 +37,7 @@ defmodule TaylorMockWeb.Router do
   scope "/", TaylorMockWeb do
     pipe_through [:browser, :require_authenticated_user]
 
+    live "/posts", PostLive.Index, :index
     live "/posts/new", PostLive.New, :new
 
     live_dashboard "/dashboard", metrics: TaylorMockWeb.Telemetry
