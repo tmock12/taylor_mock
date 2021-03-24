@@ -23,3 +23,5 @@ config :taylor_mock, TaylorMockWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :taylor_mock, :nimble_store, til_path: "test/support/data/til/**/*.md"
