@@ -5,14 +5,21 @@
     <h1 class="text-3xl">Hi, I'm Taylor</h1>
     <p class="pt-2 text-lg">
       A software developer and consultant experienced in building applications
-      for various business domains. Currently writing Elixir and JavaScript at
+      for various business domains. Currently writing Elixir at
+      <a
+        href="https://getdivvy.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-300"
+        >Divvy</a
+      >. Formerly at
       <a
         href="http://www.heroku.com"
         target="_blank"
         rel="noopener noreferrer"
         class="text-blue-300"
         >Heroku</a
-      >. Formerly at
+      > and
       <a
         href="http://www.hashrocket.com"
         target="_blank"
