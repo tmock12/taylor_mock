@@ -16,6 +16,7 @@ defmodule TaylorMockWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -29,10 +30,10 @@ defmodule TaylorMockWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TaylorMock.Repo)
+    :ok = Sandbox.checkout(TaylorMock.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TaylorMock.Repo, {:shared, self()})
+      Sandbox.mode(TaylorMock.Repo, {:shared, self()})
     end
 
     :ok

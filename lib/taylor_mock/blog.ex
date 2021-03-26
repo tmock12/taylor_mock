@@ -4,10 +4,9 @@ defmodule TaylorMock.Blog do
   """
 
   import Ecto.Query, warn: false
-  alias TaylorMock.Repo
-
-  alias TaylorMock.Blog.Post
   alias TaylorMock.Accounts.User
+  alias TaylorMock.Blog.Post
+  alias TaylorMock.Repo
 
   @doc """
   Creates a post.
@@ -35,7 +34,7 @@ defmodule TaylorMock.Blog do
       iex> change_post(post)
       [%Post{}, ...]
   """
-  def list_posts() do
+  def list_posts do
     Post
     |> order_by(desc: :inserted_at)
     |> Repo.all()

@@ -1,9 +1,8 @@
 defmodule TaylorMockWeb.UserAuthTest do
   use TaylorMockWeb.ConnCase, async: true
-
+  import TaylorMock.AccountsFixtures
   alias TaylorMock.Accounts
   alias TaylorMockWeb.UserAuth
-  import TaylorMock.AccountsFixtures
 
   @remember_me_cookie "_taylor_mock_web_user_remember_me"
 

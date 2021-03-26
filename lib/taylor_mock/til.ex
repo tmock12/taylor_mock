@@ -3,8 +3,10 @@ defmodule TaylorMock.Til do
   Access functions for Today I Learned (TIL) posts.
   """
 
+  alias TaylorMock.Til.NimbleStore
+
   @doc """
   Returns all posts, sorted by date
   """
-  def all_posts, do: TaylorMock.Til.NimbleStore.all_posts()
+  def all_posts, do: NimbleStore.all_posts()
 end

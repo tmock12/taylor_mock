@@ -1,8 +1,7 @@
 defmodule TaylorMock.AccountsTest do
   use TaylorMock.DataCase
-
-  alias TaylorMock.Accounts
   import TaylorMock.AccountsFixtures
+  alias TaylorMock.Accounts
   alias TaylorMock.Accounts.{User, UserToken}
 
   describe "get_user_by_email_and_password/2" do
