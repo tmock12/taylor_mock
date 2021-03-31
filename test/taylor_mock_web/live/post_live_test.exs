@@ -17,12 +17,12 @@ defmodule TaylorMockWeb.PostLiveTest do
         |> form("#post-form", post: %{title: "", body: ""})
         |> render_change()
 
-      assert invalid_change_html =~ "post-form_title\">can&apos;t be blank"
-      assert invalid_change_html =~ "post-form_body\">can&apos;t be blank"
+      assert invalid_change_html =~ "post-form_title\">can&#39;t be blank"
+      assert invalid_change_html =~ "post-form_body\">can&#39;t be blank"
 
       refute live
              |> form("#post-form", post: %{title: "A Title", body: "The Body"})
-             |> render_change() =~ "can&apos;t be blank",
+             |> render_change() =~ "can&#39;t be blank",
              "Removes errors on valid change"
 
       {:ok, _, html} =
@@ -44,7 +44,7 @@ defmodule TaylorMockWeb.PostLiveTest do
 
       {:ok, _live, html} = live(conn, Routes.post_index_path(conn, :index))
 
-      assert html =~ "Taylor&apos;s thoughts, tips and tricks</h1>"
+      assert html =~ "Taylor&#39;s thoughts, tips and tricks</h1>"
       assert html =~ post1.title
       assert html =~ Date.to_string(post1.inserted_at)
 
