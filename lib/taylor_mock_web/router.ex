@@ -23,6 +23,7 @@ defmodule TaylorMockWeb.Router do
 
     delete "/log_out", UserSessionController, :delete
     get "/", MarketingController, :welcome
+    live "/til", TilLive.Index, :index
   end
 
   ## Authentication routes
