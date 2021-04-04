@@ -16,17 +16,16 @@
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "babel-loader": "^8.0.0",
-    "copy-webpack-plugin": "^5.1.1",
+    "copy-webpack-plugin": "^7.x",
     "css-loader": "^5.2.0",
-    "hard-source-webpack-plugin": "^0.13.1",
+    "css-minimizer-webpack-plugin": "^1.x",
     "mini-css-extract-plugin": "^1.4.0",
-    "node-sass": "^4.13.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^4.1.0",
-    "sass-loader": "^8.0.2",
+    "sass": "^1.x",
+    "sass-loader": "10.x",
+    "node-sass": "^4.13.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
-    "terser-webpack-plugin": "^4.2.3",
-    "webpack": "4.46.0",
+    "webpack": "5.x",
     "webpack-cli": "^4.6.0"
   }
 }
