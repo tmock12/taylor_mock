@@ -24,7 +24,7 @@
     "postcss-loader": "^4.1.0",
     "sass": "^1.x",
     "sass-loader": "10.x",
-    "node-sass": "^4.13.1",
+    "node-sass": "^5.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "webpack": "5.x",
     "webpack-cli": "^4.6.0"
