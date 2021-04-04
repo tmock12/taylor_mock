@@ -1,12 +1,14 @@
 %{
-  title: "A Test Post",
-  tags: ~w(Elixir),
-  date: ~D[2021-04-20],
+  title: "The First TIL Post",
+  tags: ~w(),
+  date: ~D[2021-05-04],
 }
 
 ---
-# This is a title
+What's a **TIL**? **TIL** is short for "Today I Learned". It's a quick way to document things I learn while programming on the daily.
 
 ```elixir
-assert 1 == 1
+def welcome() do
+  IO.puts("Welcome!")
+end
 ```
