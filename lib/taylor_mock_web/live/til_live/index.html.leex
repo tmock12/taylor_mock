@@ -3,23 +3,24 @@
 
   <div class="flex flex-col items-center justify-center mt-6">
     <%= for %{title: title, date: date, body: body} <- @posts do %>
-      <a
-        class="block w-full max-w-2xl mt-8 bg-white border-t-4 border-gray-300 shadow-md rounded-md transition duration-500 ease-in-out transform hover:scale-105"
-        href="#"
+      <div
+        class="block w-full max-w-2xl mt-8 bg-white border-t-4 border-gray-300 shadow-md rounded-md"
         data-test="til-section"
         >
         <div class="flex items-center justify-between px-4 py-2">
           <h3 class="text-lg font-medium text-gray-700">
-            <%= title %>
+            <a href="#" class="hover:text-blue-600">
+              <%= title %>
+            </a>
           </h3>
           <span class="block text-sm font-light text-gray-600">
             <%= date %>
           </span>
         </div>
-        <div class="px-4 py-2 border-t-2 border-gray-100">
+        <div class="px-4 py-2 border-t-2 border-gray-100 max-w-none prose lg:prose-l">
           <%= raw(body) %>
         </div>
-      </a>
+      </div>
     <% end %>
   </div>
 </div>
