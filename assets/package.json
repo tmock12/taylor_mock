@@ -21,7 +21,7 @@
     "css-loader": "^5.2.0",
     "css-minimizer-webpack-plugin": "^1.x",
     "mini-css-extract-plugin": "^1.4.0",
-    "postcss-loader": "^4.1.0",
+    "postcss-loader": "^5.2.0",
     "sass": "^1.x",
     "sass-loader": "10.x",
     "node-sass": "^5.0.0",
