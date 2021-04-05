@@ -23,7 +23,7 @@
     "mini-css-extract-plugin": "^1.4.0",
     "postcss-loader": "^5.2.0",
     "sass": "^1.x",
-    "sass-loader": "10.x",
+    "sass-loader": "11.x",
     "node-sass": "^5.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "webpack": "5.x",
