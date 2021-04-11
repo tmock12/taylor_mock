@@ -9,4 +9,13 @@ defmodule TaylorMock.Til do
   Returns all posts, sorted by date
   """
   def all_posts, do: NimbleStore.all_posts()
+
+  def get_post_by_slug!(slug) do
+    Enum.find(all_posts(), &(&1.slug == slug)) ||
+      raise NotFoundError, "til with slug=#{slug} not found"
+  end
+end
+
+defmodule NotFoundError do
+  defexception [:message, plug_status: 404]
 end

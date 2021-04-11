@@ -14,8 +14,10 @@ defmodule TaylorMockWeb.Live.TilLive.IndexTest do
 
     assert has_element?(live, @first_til_section, first_post.title)
     assert has_element?(live, @first_til_section, to_string(first_post.date))
+    assert html =~ ~s/href="#{Routes.til_show_path(conn, :show, first_post.slug)}"/
 
     assert has_element?(live, @second_til_section, second_post.title)
     assert has_element?(live, @second_til_section, to_string(second_post.date))
+    assert html =~ ~s/href="#{Routes.til_show_path(conn, :show, second_post.slug)}"/
   end
 end
