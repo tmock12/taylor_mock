@@ -2,6 +2,7 @@
   title: "The First TIL Post",
   tags: ~w(),
   date: ~D[2021-05-04],
+  slug: "4xbpob1lei"
 }
 
 ---
