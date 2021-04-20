@@ -6,8 +6,13 @@ defmodule TaylorMockWeb.TilLive.Show do
   use TaylorMockWeb, :live_view
 
   @impl Phoenix.LiveView
-  def handle_params(%{"slug" => slug}, _, socket) do
-    {:noreply, socket |> assign(:post, TaylorMock.Til.get_post_by_slug!(slug))}
+  def handle_params(%{"titled_slug" => titled_slug}, _, socket) do
+    post =
+      titled_slug
+      |> extracted_slug()
+      |> TaylorMock.Til.get_post_by_slug!()
+
+    {:noreply, socket |> assign(:post, post)}
   end
 
   @impl Phoenix.LiveView
@@ -21,4 +26,7 @@ defmodule TaylorMockWeb.TilLive.Show do
     </div>
     """
   end
+
+  defp extracted_slug(<<slug::size(10)-binary, _rest::binary>>), do: slug
+  defp extracted_slug(_), do: nil
 end

@@ -14,6 +14,6 @@ defmodule TaylorMockWeb.Live.TilLive.PostComponentTest do
 
     assert html =~ post.title
     assert html =~ post.body
-    assert html =~ ~s/href="#{Routes.til_show_path(conn, :show, post.slug)}">/
+    assert html =~ ~s/href="#{Routes.til_show_path(conn, :show, post.slug)}-an-elixir-post">/
   end
 end

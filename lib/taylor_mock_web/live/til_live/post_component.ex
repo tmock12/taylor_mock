@@ -13,7 +13,10 @@ defmodule TaylorMockWeb.Live.TilLive.PostComponent do
         >
         <div class="flex items-center justify-between px-4 py-2">
           <h3 class="text-lg font-medium text-gray-700">
-            <%= live_redirect @post.title, to: Routes.til_show_path(@socket, :show, @post.slug), class: "hover:text-blue-600" %>
+            <%= live_redirect(
+              @post.title,
+              to: Routes.til_show_path(@socket, :show, @post.slug) <> slugified_title(@post.title),
+              class: "hover:text-blue-600") %>
           </h3>
           <span class="block text-sm font-light text-gray-600">
             <%= @post.date %>
@@ -24,5 +27,13 @@ defmodule TaylorMockWeb.Live.TilLive.PostComponent do
         </div>
       </div>
     """
+  end
+
+  defp slugified_title(title) do
+    title
+    |> String.downcase()
+    |> String.replace(~r/[^A-Za-z0-9\s-]/, "")
+    |> String.replace(~r/(\s|-)+/, "-")
+    |> String.replace_prefix("", "-")
   end
 end
