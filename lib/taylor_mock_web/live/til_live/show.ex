@@ -12,7 +12,12 @@ defmodule TaylorMockWeb.TilLive.Show do
       |> extracted_slug()
       |> TaylorMock.Til.get_post_by_slug!()
 
-    {:noreply, socket |> assign(:post, post)}
+    socket =
+      socket
+      |> assign(:post, post)
+      |> assign(:page_title, post.title)
+
+    {:noreply, socket}
   end
 
   @impl Phoenix.LiveView
