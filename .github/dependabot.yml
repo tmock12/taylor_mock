@@ -1,0 +1,53 @@
+version: 2
+updates:
+- package-ecosystem: mix
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: floki
+    versions:
+    - 0.30.0
+    - 0.30.1
+  - dependency-name: postgrex
+    versions:
+    - 0.15.8
+  - dependency-name: nimble_publisher
+    versions:
+    - 0.1.2
+  - dependency-name: credo
+    versions:
+    - 1.5.5
+  - dependency-name: phoenix
+    versions:
+    - 1.5.8
+  - dependency-name: bcrypt_elixir
+    versions:
+    - 2.3.0
+  - dependency-name: phoenix_html
+    versions:
+    - 2.14.3
+- package-ecosystem: npm
+  directory: "/assets"
+  schedule:
+    interval: weekly
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: css-loader
+    versions:
+    - 5.2.2
+  - dependency-name: sass
+    versions:
+    - 1.32.10
+  - dependency-name: webpack
+    versions:
+    - 5.33.2
+  - dependency-name: copy-webpack-plugin
+    versions:
+    - 6.4.1
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.13
