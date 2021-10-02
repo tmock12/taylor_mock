@@ -41,17 +41,16 @@ defmodule TaylorMock.MixProject do
       {:jason, "~> 1.0"},
       {:makeup_elixir, ">= 0.0.0"},
       {:nimble_publisher, "~> 0.1.0"},
-      {:phoenix, "~> 1.5.7"},
+      {:phoenix, "~> 1.6.0"},
       {:phoenix_ecto, "~> 4.1"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_dashboard, "~> 0.4"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.15.0"},
-      {:phx_gen_auth, "~> 0.6", only: [:dev], runtime: false},
+      {:phoenix_html, "~> 3.0.4"},
+      {:phoenix_live_dashboard, "~> 0.5"},
+      {:phoenix_live_reload, "~> 1.3", only: :dev},
+      {:phoenix_live_view, "~> 0.16.0"},
       {:plug_cowboy, "~> 2.0"},
       {:postgrex, ">= 0.0.0"},
-      {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"}
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_poller, "~> 0.5"}
     ]
   end
 
