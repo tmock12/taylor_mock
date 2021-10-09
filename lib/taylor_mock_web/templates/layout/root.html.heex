@@ -18,8 +18,8 @@
     <link rel="manifest" href="/manifest.json">
     <%= csrf_meta_tag() %>
     <%= live_title_tag assigns[:page_title] || "Taylor Mock" %>
-    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")}/>
-      <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/js/app.js")}></script>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
     <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous"></script>
   </head>
   <body class="flex flex-col min-h-screen bg-gray-100">

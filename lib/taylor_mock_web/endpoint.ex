@@ -25,6 +25,7 @@ defmodule TaylorMockWeb.Endpoint do
     from: :taylor_mock,
     gzip: false,
     only: ~w(
+      assets
       css
       fonts
       images
