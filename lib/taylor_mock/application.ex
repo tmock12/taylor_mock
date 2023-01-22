@@ -7,8 +7,6 @@ defmodule TaylorMock.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      TaylorMock.Repo,
       # Start the Telemetry supervisor
       TaylorMockWeb.Telemetry,
       # Start the PubSub system

@@ -7,9 +7,6 @@
 # General application configuration
 use Mix.Config
 
-config :taylor_mock,
-  ecto_repos: [TaylorMock.Repo]
-
 # Configures the endpoint
 config :taylor_mock, TaylorMockWeb.Endpoint,
   url: [host: "localhost"],

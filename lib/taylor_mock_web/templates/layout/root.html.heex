@@ -29,9 +29,6 @@
       <% end %>
       <nav role="navigation" class="flex items-center ml-8">
         <%= link "Today I Learned", to: Routes.til_index_path(@conn, :index), class: "hover:text-gray-500 hover:underline" %>
-        <%= if @current_user do %>
-          <%= link "Log out #{@current_user.email}", to: Routes.user_session_path(@conn, :delete), method: :delete %>
-        <% end %>
       </nav>
     </header>
     <main role="main" class="flex-grow">

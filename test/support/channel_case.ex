@@ -16,7 +16,6 @@ defmodule TaylorMockWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
-  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -27,15 +26,5 @@ defmodule TaylorMockWeb.ChannelCase do
       # The default endpoint for testing
       @endpoint TaylorMockWeb.Endpoint
     end
-  end
-
-  setup tags do
-    :ok = Sandbox.checkout(TaylorMock.Repo)
-
-    unless tags[:async] do
-      Sandbox.mode(TaylorMock.Repo, {:shared, self()})
-    end
-
-    :ok
   end
 end

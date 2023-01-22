@@ -35,20 +35,17 @@ defmodule TaylorMock.MixProject do
     [
       {:bcrypt_elixir, "~> 2.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:ecto_sql, "~> 3.4"},
       {:floki, ">= 0.27.0", only: :test},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:makeup_elixir, ">= 0.0.0"},
       {:nimble_publisher, "~> 0.1.0"},
       {:phoenix, "~> 1.6.0"},
-      {:phoenix_ecto, "~> 4.1"},
       {:phoenix_html, "~> 3.1.0"},
       {:phoenix_live_dashboard, "~> 0.5"},
       {:phoenix_live_reload, "~> 1.3", only: :dev},
       {:phoenix_live_view, "~> 0.16.4"},
       {:plug_cowboy, "~> 2.0"},
-      {:postgrex, ">= 0.0.0"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 0.5"}
     ]
@@ -62,10 +59,8 @@ defmodule TaylorMock.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      setup: ["deps.get", "cmd npm install --prefix assets"],
+      test: ["test"]
     ]
   end
 end

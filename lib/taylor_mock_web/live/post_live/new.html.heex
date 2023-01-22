@@ -1,9 +1,0 @@
-<h1 class="text-center">New Post</h1>
-
-<%= live_component @socket, TaylorMockWeb.PostLive.FormComponent,
-id: :new_post,
-action: :new,
-current_user: @current_user,
-submit_text: "Create Post",
-return_to: Routes.post_new_path(@socket, :new),
-post: @post %>
