@@ -3,7 +3,7 @@
 
   <div class="flex flex-col items-center justify-center mt-6">
     <%= for post <- @posts do %>
-      <%= live_component(@socket, TaylorMockWeb.Live.TilLive.PostComponent, post: post) %>
+      <%= live_component(TaylorMockWeb.Live.TilLive.PostComponent, post: post) %>
     <% end %>
   </div>
 </div>
