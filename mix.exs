@@ -42,7 +42,6 @@ defmodule TaylorMock.MixProject do
       {:nimble_publisher, "~> 0.1.0"},
       {:phoenix, "~> 1.6.0"},
       {:phoenix_html, "~> 3.1.0"},
-      {:phoenix_live_dashboard, "~> 0.5"},
       {:phoenix_live_reload, "~> 1.3", only: :dev},
       {:phoenix_live_view, "~> 0.16.4"},
       {:plug_cowboy, "~> 2.0"},
