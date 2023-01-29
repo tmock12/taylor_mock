@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content={description()}>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@tmock12">
-    <meta name="twitter:title" content={og_title(assigns)}>
-    <meta property="og:title" content={og_title(assigns)}>
-    <meta property="og:description" content={og_description(assigns)}>
-    <meta property="og:image" content={og_image(assigns)}>
-    <meta property="og:url" content={TaylorMockWeb.Endpoint.static_url()}>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tmock12" />
+    <meta name="twitter:title" content={og_title(assigns)} />
+    <meta property="og:title" content={og_title(assigns)} />
+    <meta property="og:description" content={og_description(assigns)} />
+    <meta property="og:image" content={og_image(assigns)} />
+    <meta property="og:url" content={TaylorMockWeb.Endpoint.static_url()} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
     <%= csrf_meta_tag() %>
-    <%= live_title_tag assigns[:page_title] || "Taylor Mock" %>
-    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")}/>
-      <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/js/app.js")}></script>
-    <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous"></script>
+    <%= live_title_tag(assigns[:page_title] || "Taylor Mock") %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")} />
+    <script
+      defer
+      phx-track-static
+      type="text/javascript"
+      src={Routes.static_path(@conn, "/js/app.js")}
+    >
+    </script>
+    <script src="https://kit.fontawesome.com/0194a7e496.js" crossorigin="anonymous">
+    </script>
   </head>
   <body class="flex flex-col min-h-screen bg-gray-100">
     <header class="flex items-center p-6 justify-etween">
@@ -28,18 +35,17 @@
         <span class="text-xl font-semibold">Taylor Mock</span>
       <% end %>
       <nav role="navigation" class="flex items-center ml-8">
-        <%= link "Today I Learned", to: Routes.til_index_path(@conn, :index), class: "hover:text-gray-500 hover:underline" %>
+        <%= link("Today I Learned",
+          to: Routes.til_index_path(@conn, :index),
+          class: "hover:text-gray-500 hover:underline"
+        ) %>
       </nav>
     </header>
     <main role="main" class="flex-grow">
       <%= @inner_content %>
     </main>
     <footer class="p-6 text-center">
-      <a
-        href="https://www.github.com/tmock12"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
+      <a href="https://www.github.com/tmock12" target="_blank" rel="noopener noreferrer">
         <i title="Github @tmock12" class="fab fa-github"></i>
       </a>
       <a
@@ -47,14 +53,10 @@
         target="_blank"
         rel="noopener noreferrer"
         class="mx-2"
-        >
+      >
         <i title="Twitter @tmock12" class="fab fa-twitter"></i>
       </a>
-      <a
-        href="https://www.linkedin.com/in/taylormock/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
+      <a href="https://www.linkedin.com/in/taylormock/" target="_blank" rel="noopener noreferrer">
         <i title="LinkedIn Taylor Mock" class="fab fa-linkedin"></i>
       </a>
     </footer>
