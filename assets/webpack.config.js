@@ -15,6 +15,7 @@ module.exports = (env, options) => {
       path: path.resolve(__dirname, '../priv/static/js'),
       filename: '[name].js',
       publicPath: '/js/',
+      hashFunction: 'xxhash64',
     },
     module: {
       rules: [
